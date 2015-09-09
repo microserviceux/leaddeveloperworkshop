@@ -1,0 +1,37 @@
+{
+  "name": "ExampleGateway",
+  "version": "0.0.1",
+  "description": "HTTP to Muon Gateway",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microserviceux/leaddeveloperworkshop.git"
+  },
+  "keywords": [
+    "Muon",
+    "REST",
+    "API"
+  ],
+  "author": "NJW",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "callsite": "^1.0.0",
+    "colors": "^1.1.2",
+    "express": "^4.13.3",
+    "muon-core": "5.4.6",
+    "restify": "^4.0.0",
+    "stack-trace": "0.0.9",
+    "uuid": "^2.0.1",
+    "winston": "^1.0.1"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "debug": "^2.2.0",
+    "mocha": "^2.2.5",
+    "supertest": "^1.0.1"
+  }
+}
