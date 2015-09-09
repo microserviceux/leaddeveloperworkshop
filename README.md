@@ -104,3 +104,27 @@ See ```spotview``` for an example in nodejs
 
 This can be started with ```npm start```
 
+## Upgrade the view
+
+The event stream is immutable. Projections and other view concerns can be arbitrarily recreated from the stream.
+
+The key point here is that you do not really upgrade like you would a transactional database, you take
+advantage of the ability to create multiple eventually consistent view representations.
+
+Logically, you know that one is a more advanced or newer version, but from a data point of view, they are peers.
+
+Update the projection and view to show a subtly different form of data, give them new names.
+
+The handling of the upgrade/ cutover is a gateway or routing concern.
+
+## Create a gateway
+
+Muon takes an event stream oriented view of reality. By applying this view, many benefits appear, however this world view is not the only one and external integration is required.
+
+Converting between an event oriented model and a resourceful or RPC model is the role of a *gateway*.
+
+You can see an exampe gateway in ```gateway```
+
+This converts HTTP GET requests into Muon queries and formats appropriately.
+
+This could be extended to integrate with the reactive streams or emit events.
