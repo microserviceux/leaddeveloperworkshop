@@ -82,7 +82,25 @@ cat awsspotprice-inboundadapter/exampledata.json | muon event
 ```
 
 
-## Create a Projection
+## Create Projections
 
+The event store supports event projections. These are reduction functions executed across an event range to generate an aggregated data structure that can then be queried.
 
+```
+muon command muon://eventstore/projections '{"projection-name" : "product-list",   "stream-name" : "mydata",   "language" : "javascript",  "reduction" : "function(prev,next) { prev.push(next.payload.itemid); return prev; }",  "initial-value" : "[]"}'
+```
+
+Query this using 
+
+```
+muon query muon://eventstore/projection?projection-name=count-products
+```
+
+## Create a view, fronting the projections
+
+A view component is a service that creates an optimised representation data structure. You have many options on how to create these data structures.
+
+See ```spotview``` for an example in nodejs
+
+This can be started with ```npm start```
 
