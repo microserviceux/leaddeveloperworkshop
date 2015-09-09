@@ -9,7 +9,7 @@ var debug     = require('debug')("MuonGateway");
 
 //************ Define Gateway App ************
 var server = restify.createServer();
-var port      = 9001;
+var port      = 9010;
 var myConfig  = {};
 
 //Define name and url
@@ -37,10 +37,8 @@ catch(err){
 
 //************ Start Routes ************
 server.get('/', function(req, res) {
-  muonSystem.query('muon://awsview/data', {}, function(event, payload) {
-      debug("Query response ... ");
-      debug(payload);
-      debug('-------------------------');
+    console.log("Startomg!!");
+  muonSystem.query('muon://spotview/spotdata', function(event, payload) {
       res.json(payload);
   });
 });
